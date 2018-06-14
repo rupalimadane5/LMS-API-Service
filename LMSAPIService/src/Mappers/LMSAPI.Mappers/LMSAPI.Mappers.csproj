@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Models\LMS.API.Models.Domain\LMS.API.Models.Domain.csproj" />
+    <ProjectReference Include="..\..\Models\LMS.API.Models.Entity\LMS.API.Models.Entity.csproj" />
+    <ProjectReference Include="..\..\Models\LMSAPI.Models.Dto\LMSAPI.Models.Dto.csproj" />
+  </ItemGroup>
+
+</Project>

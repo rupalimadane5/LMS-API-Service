@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Models\LMS.API.Models.Entity\LMS.API.Models.Entity.csproj" />
+    <ProjectReference Include="..\LMSAPI.DataLayer.Context\LMSAPI.DataLayer.Context.csproj" />
+  </ItemGroup>
+
+</Project>

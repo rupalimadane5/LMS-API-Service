@@ -3,8 +3,11 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:53925/",
+      "applicationUrl": "http://localhost:62662/",
       "sslPort": 0
+    },
+    "environmentVariables": {
+      "ASPNETCORE_ENVIRONMENT": "dev"
     }
   },
   "profiles": {
@@ -12,16 +15,16 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "dev"
       }
     },
     "LMSAPIService": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "dev"
       },
-      "applicationUrl": "http://localhost:53926/"
+      "applicationUrl": "http://localhost:60000/"
     }
   }
 }
