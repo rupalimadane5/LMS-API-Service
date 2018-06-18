@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Buffers;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,9 +8,11 @@ using LMSAPI.DataLayer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
 
 namespace LMSAPI.Service
 {
@@ -41,7 +44,19 @@ namespace LMSAPI.Service
         public void ConfigureServices(IServiceCollection services)
         {
             Services = services;
-            services.AddMvc();
+            //services.AddMvc();
+
+            services.AddMvc(options =>
+            {
+                options.OutputFormatters.Clear();
+                options.OutputFormatters.Add(new JsonOutputFormatter(
+                    new JsonSerializerSettings
+                    {
+                        DateFormatHandling = DateFormatHandling.IsoDateFormat,
+                        DateTimeZoneHandling = DateTimeZoneHandling.Utc,
+                    },
+                    ArrayPool<char>.Shared));
+            });
             // Add EF services to the services container
             services.AddEntityFrameworkSqlServer();
 
